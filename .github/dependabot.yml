@@ -1,0 +1,33 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/arblok-cpmi-platform"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "npm"
+    commit-message:
+      prefix: "chore(deps)"
+    groups:
+      dev-dependencies:
+        patterns:
+          - "@types/*"
+          - "@testing-library/*"
+          - "vitest*"
+          - "typescript"
+          - "vite*"
+          - "tailwindcss*"
+      production-dependencies:
+        patterns:
+          - "react*"
+          - "@supabase/*"
+          - "zod"
+          - "lucide-react"
+          - "react-router*"
+          - "react-hook-form*"
+          - "@hookform/resolvers"
+          - "@fontsource-variable/*"
